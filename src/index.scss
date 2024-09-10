@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&dis");
+$primary: #051923;
+$secondary: rgb(254,244,232); //#EDF2F4;
+$txtcolor:black;
+
+@mixin transparentButtons($enableMargin, $hoverbgColor, $hovertxtColor) {
+  background-color: transparent;
+  border: transparent;
+  padding : 0 10px;
+  cursor: pointer;
+  &:hover {
+    background-color:$hoverbgColor;
+   color: $hovertxtColor;
+
+  }
+}
+
+// Example usage
+button.copy {
+  @include transparentButtons(true, #0b5ed7, white); 
+ 
+}
+
+button.remove {
+  @include transparentButtons(false, red, white); 
+}
+
+
+.addButton{
+  @include transparentButtons(false, lighten($primary, 30%), white); 
+  background-color: $primary;
+  color: $secondary;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  height: fit-content;
+  align-self: center;
+  cursor: pointer;
+}
+.whitetext{
+  color:$secondary;
+}
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: $primary;
+  overflow: hidden;
+}
+.sidebar-inner{
+  width: 100px;
+  *{
+    margin: 0 !important;
+    padding: 2px !important;
+  }
+}
+main {
+  margin: 0  150px;
+  border-radius: 25px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: fit-content;
+  align-self:center;
+ width: 60%;
+  *{
+    background-color: $secondary;
+  }
+  #results{
+   overflow-y:scroll;
+  }
+  #Searchbox {
+    border-bottom:2px solid darken($secondary,100%);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    background-color:$secondary;
+    position: relative;
+    
+   
+    input {
+      &::placeholder{
+        color: $txtcolor;
+        font-weight: 600;
+      }
+      &:focus{
+        outline:red;
+      }
+      font-size:1.5rem;
+      color: $txtcolor; 
+      font-weight: 600;
+      background-color:$secondary;
+      height: 60px;
+      top: 50%;
+      width: 100%;
+      padding-left: 3rem;
+      border: 0;
+      // margin-top: 10px;
+    }
+    svg {
+      width: 10%;
+      height: 30px;
+      top: 50%;
+    }
+  }
+}
+#crn {
+
+  border-left:2px solid $secondary;
+  width: fit-content;
+  padding-left:40px;
+  display: flex;
+  // padding: 10px 0;
+  flex-direction: column;
+  h2{
+  color: $secondary;
+    font-size:2rem
+  }
+  ul{ list-style: none;}
+  li {
+    cursor: pointer;
+    width: 90%;
+    padding: 5px 3px;
+    font-weight: 200;
+    margin: 8px 0;
+    background-color: $secondary;
+    color: $txtcolor;
+    font-weight:900;
+    border-radius: 10px;
+  }
+}
+#root {
+  
+  padding: 8% 5%;
+  padding-top:0 ;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  
+}
+header{
+  p {
+    color:$secondary;
+    font-weight:bold;
+  }
+  img{
+    padding-right: 50px;
+  }
+  #fetch,#fetch1{
+    padding: 10px;
+    color: white;
+  }
+  display: flex;
+  width: 100%;
+  background-color:$primary
+  
+}
+.prof {
+  padding-left: 50px;
+  line-height: 24px;
+  padding-top: 20px;
+  border-bottom: 0.5px solid rgba($color: grey, $alpha: 0.4);
+  padding-bottom: 10px;
+  display: flex;
+
+  // grid-template-areas: "one two";
+  // grid-template-columns: 30% 70%;
+  // grid-gap: 5px;
+  // width: max-content;
+  margin-left: 0;
+  div > ul {
+    list-style: none;
+  }
+  .r{
+      list-style: none; 
+      display: flex;
+      flex-wrap: wrap; 
+      width: 60%;
+  li{
+      padding-right: 20px;
+    }
+  }
+  ol{list-style: none;
+ 
+  }
+
+  .rating {
+    height: min-content;
+    grid-area: one;
+    border-radius: 100%;
+    //  border: 0.5px solid black ;
+    // float: left;
+    //  height:100px;
+  }
+  h2,
+  ul {
+    text-align: left;
+    grid-area: two;
+  }
+  h2 {
+    font-weight: 700;
+  }
+  div {
+    width: 70%;
+   
+  }
+#time{
+  width: 8rem;
+}
+}
