@@ -2,19 +2,23 @@ import Search from "./search";
 import Header from "./header";
 
 import SideBar from "./sidebar";
-import React from "react";
+import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
+ const [showSideBar,setShowSideBar]= useState(true);
+
   return (
     <>
-      <Header />
+      <Header setShowSideBar={setShowSideBar} />
+      {(showSideBar)&& <SideBar setShowSideBar={setShowSideBar}  />}
       <section style={{ display: "flex", height: "70vh" }}>
         <Search />
-        <SideBar />
+       
       </section>
+   
       <footer>
         <h3 className="whitetext">
           @ {"  "}

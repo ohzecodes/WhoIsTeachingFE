@@ -42,7 +42,7 @@ const Search = (props) => {
       <div id="Searchbox">
         {SearchIcon()}
         <input
-          placeholder="Search by CourseName..."
+          placeholder="Search by CourseName...[CPSC]"
           type="text"
           onBlur={handleBlur}
           onKeyDown={(e) => (e.key === "Enter" ? handleBlur(e) : null)}

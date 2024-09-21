@@ -1,34 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&dis");
+
 $primary: #051923;
-$secondary: rgb(254,244,232); //#EDF2F4;
-$txtcolor:black;
+$secondary: rgb(254, 244, 232); //#EDF2F4;
+$txtcolor: black;
 
 @mixin transparentButtons($enableMargin, $hoverbgColor, $hovertxtColor) {
   background-color: transparent;
   border: transparent;
-  padding : 0 10px;
+  padding: 0 10px;
   cursor: pointer;
   &:hover {
-    background-color:$hoverbgColor;
-   color: $hovertxtColor;
-
+    background-color: $hoverbgColor;
+    color: $hovertxtColor;
+  }
+}
+header
+table{
+  thead th{
+    text-align: center;
+  }
+  th{text-align: right;}
+  td{
+    padding-left:20px 
   }
 }
 
 // Example usage
 button.copy {
-  @include transparentButtons(true, #0b5ed7, white); 
- 
+  @include transparentButtons(true, #0b5ed7, white);
 }
 
 button.remove {
-  @include transparentButtons(false, red, white); 
+  @include transparentButtons(false, red, white);
 }
 
-
-.addButton{
-  @include transparentButtons(false, lighten($primary, 30%), white); 
+.addButton {
+  @include transparentButtons(false, lighten($primary, 30%), white);
   background-color: $primary;
   color: $secondary;
   border: 0;
@@ -40,61 +46,60 @@ button.remove {
   align-self: center;
   cursor: pointer;
 }
-.whitetext{
-  color:$secondary;
+.whitetext {
+  color: $secondary;
 }
 * {
-  font-family: "Raleway", sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background-color: $primary;
   overflow: hidden;
 }
-.sidebar-inner{
+.sidebar-inner {
   width: 100px;
-  *{
+  * {
     margin: 0 !important;
     padding: 2px !important;
   }
 }
 main {
-  margin: 0  150px;
+  margin: 0 150px;
   border-radius: 25px;
   overflow-y: hidden;
   overflow-x: hidden;
   height: fit-content;
-  align-self:center;
- width: 60%;
-  *{
+  align-self: center;
+  width: 60%;
+  * {
     background-color: $secondary;
   }
-  #results{
-   overflow-y:scroll;
+  #results {
+    overflow-y: scroll;
   }
   #Searchbox {
-    border-bottom:2px solid darken($secondary,100%);
+    border-bottom: 2px solid darken($secondary, 100%);
     display: flex;
     justify-items: center;
     align-items: center;
 
-    background-color:$secondary;
+    background-color: $secondary;
     position: relative;
-    
-   
+
     input {
-      &::placeholder{
+      &::placeholder {
         color: $txtcolor;
         font-weight: 600;
       }
-      &:focus{
-        outline:red;
+      &:focus {
+        outline: red;
       }
-      font-size:1.5rem;
-      color: $txtcolor; 
+      font-size: 1.5rem;
+      color: $txtcolor;
       font-weight: 600;
-      background-color:$secondary;
+      background-color: $secondary;
       height: 60px;
       top: 50%;
       width: 100%;
@@ -109,55 +114,67 @@ main {
     }
   }
 }
-#crn {
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
-  border-left:2px solid $secondary;
-  width: fit-content;
-  padding-left:40px;
+#crn {
+  background-color: black;
+  height: 100vh;
+  width: 200px;
+  border-left: 0.5px solid $secondary;
+  padding-left: 40px;
   display: flex;
-  // padding: 10px 0;
   flex-direction: column;
-  h2{
-  color: $secondary;
-    font-size:2rem
+  h2 {
+    color: $secondary;
+    font-size: 2rem;
   }
-  ul{ list-style: none;}
+  ul {
+    list-style: none;
+  }
   li {
-    cursor: pointer;
-    width: 90%;
     padding: 5px 3px;
     font-weight: 200;
     margin: 8px 0;
     background-color: $secondary;
     color: $txtcolor;
-    font-weight:900;
+    font-weight: 900;
     border-radius: 10px;
   }
 }
+
 #root {
-  
   padding: 8% 5%;
-  padding-top:0 ;
+  padding-top: 0;
   overflow-y: hidden;
   overflow-x: hidden;
-  
 }
-header{
+header {
   p {
-    color:$secondary;
-    font-weight:bold;
+    color: $secondary;
+    font-weight: bold;
   }
-  img{
+  img {
     padding-right: 50px;
   }
-  #fetch,#fetch1{
+  #fetch,
+  #fetch1 {
     padding: 10px;
     color: white;
   }
   display: flex;
   width: 100%;
-  background-color:$primary
-  
+  background-color: $primary;
 }
 .prof {
   padding-left: 50px;
@@ -175,17 +192,17 @@ header{
   div > ul {
     list-style: none;
   }
-  .r{
-      list-style: none; 
-      display: flex;
-      flex-wrap: wrap; 
-      width: 60%;
-  li{
+  .r {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    li {
       padding-right: 20px;
     }
   }
-  ol{list-style: none;
- 
+  ol {
+    list-style: none;
   }
 
   .rating {
@@ -205,10 +222,11 @@ header{
     font-weight: 700;
   }
   div {
-    width: 70%;
-   
+    width: 67%;
   }
-#time{
-  width: 8rem;
+  #time {
+    width: 8rem;
+  }
 }
-}
+
+@import "./_SideBarCTRL.scss";

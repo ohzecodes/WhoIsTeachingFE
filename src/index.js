@@ -22,7 +22,7 @@ const store = configureStore({
     
   });
 
-
+document.title = "Course Scheduler";
 const rootElement  = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 root.render(<Provider store={store}>  <App />

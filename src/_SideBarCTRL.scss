@@ -1,0 +1,23 @@
+// Colors
+$background: #000;
+$text: #fff;
+$cyan: #60daaa;
+$btn-init: #818181;
+
+// Basic styles
+header button{
+  cursor: pointer;
+}
+
+#closeSidebar {
+  $basecolor: $btn-init;
+  $hovercolor: $cyan;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  button{
+    cursor: pointer;
+  }
+}
