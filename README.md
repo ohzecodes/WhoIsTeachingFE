@@ -11,7 +11,7 @@ To develop an application that consolidates professor ratings and course details
 
 ## Features
 
-- **Integrated Sidebar**: A sidebar that allows students to save their selected courses, eliminating the need to take notes and enabling easy access for future reference.
+- **Integrated Sidebar**: The sidebar allows students to save their selected courses, eliminating the need to take notes and enabling easy access for future reference.
 - **Time Conflict Detection**: An automatic system that alerts students to any scheduling conflicts between selected courses, helping them make informed decisions.
 - **Automated Data Scraping**: Collection of course details and professor ratings from Rate My Professors and official course catalog.
 - **Efficient Data Processing**: Use of Pandas to clean and merge data, providing a comprehensive overview of professors and their courses.
