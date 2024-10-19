@@ -20,7 +20,7 @@ To develop an application that consolidates professor ratings and course details
 
 - **Streamlined Course Management**: Students appreciated the ability to save courses directly within the application, leading to a more organized selection process.
 - **Reduced Scheduling Conflicts**: The time conflict detection feature significantly improved students' ability to choose courses without worrying about overlapping schedules, enhancing their overall experience.
-- **Faster Website Performance**: Implementing data sharding resulted in a more responsive application, reducing load times and providing a smoother user experience.
+- **Faster Website Performance**: Implementing data sharding resulted in a faster search and loading experience, enabling users to quickly access course and professor information. This optimization led to reduced wait times and a smoother overall user experience, allowing students to make timely decisions without frustration.
 
 ## Conclusion
 
