@@ -7,12 +7,12 @@ function daytodate(day:String) {
     return indexOf + 3;
 }
 
-function dateToDay(date:number) {
+/*function dateToDay(date:number) {
   const indexOfDate = date - 3;
   if (indexOfDate < 0 || indexOfDate > daysoftheWeek.length) return -1;
 
   return daysoftheWeek[indexOfDate];
-}
+}*/
 
 export 
 class TimeRange {

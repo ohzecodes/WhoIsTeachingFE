@@ -1,11 +1,6 @@
-import { Typography } from "@mui/material";
-
 import { useEffect, useState } from "react";
 import React from "react";
 import Prof from "./prof";
-import SideBar from "./sidebar";
-
-
 import { fetchData } from "../store/actions/ProfActions";
 import { connect } from "react-redux";
 
