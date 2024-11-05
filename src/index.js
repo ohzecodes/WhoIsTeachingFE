@@ -19,7 +19,6 @@ const store = configureStore({
     }).concat(thunk)
 });
 
-document.title = "Course Scheduler";
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 root.render(
