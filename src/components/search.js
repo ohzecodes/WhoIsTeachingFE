@@ -4,10 +4,21 @@ import Prof from "./prof";
 import { fetchData } from "../store/actions/ProfActions";
 import { connect } from "react-redux";
 
-const SearchIcon = () =>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16" ><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" /></svg>
+const SearchIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    className="bi bi-search"
+    viewBox="0 0 16 16"
+  >
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+  </svg>
+);
 
-const isEqualName = (str1, str2) => str1.toUpperCase().trim() === str2.toUpperCase().trim();
-
+const isEqualName = (str1, str2) =>
+  str1.toUpperCase().trim() === str2.toUpperCase().trim();
 
 const Search = (props) => {
   const [list, SetList] = useState([]);
@@ -22,10 +33,18 @@ const Search = (props) => {
     const index = firstLetter.charCodeAt(0) - "A".charCodeAt(0);
 
     const filter = props?.data[index]?.filter((val) => {
-      const str1 = val?.subject+val?.courseNumber;
-      const str2 = event.target.value;
+      const str1 = val?.subject + val?.courseNumber; 
+      const str2 = event.target.value.trim(); 
+    
+      const isValidSubject = /^[A-Za-z]{4}$/.test(str2);  
+      if (isValidSubject) {
+        return isEqualName(val?.subject, str2);
+      }
       return isEqualName(str1, str2);
     });
+    
+    
+  
     SetList([...filter]);
   };
 
@@ -51,9 +70,7 @@ const Search = (props) => {
   );
 };
 
-
 const mapStateToProps = (state) => ({ data: state.ProfReducer.data.items });
-
 
 const mapDispatchToProps = (dispatch) => {
   return {

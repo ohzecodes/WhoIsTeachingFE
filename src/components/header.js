@@ -11,11 +11,11 @@ const HambugerIcon = () => (
     width="16"
     height="16"
     fill="currentColor"
-    class="bi bi-list"
+    className="bi bi-list"
     viewBox="0 0 16 16"
   >
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
     />
   </svg>
@@ -26,22 +26,23 @@ const FetchInfo = ({ lastfetch, semester }) => (
     <table id="fetch">
       <thead>
         <tr>
-          <th colspan={2}>Fetched on</th>
+          <th colSpan={2}>Fetched on</th>
         </tr>
       </thead>
       <tbody>
-        {Object.entries(lastfetch || {}).map(([key, value]) => {
+        {Object.entries(lastfetch||{}).map(([key, value]) => {
           if (key.includes("taken")) return null;
-
+         
           return (
+            
             <tr key={key}>
-              <th>{key.split("_")[0]}</th>
+              <th>hello{key.split("_")[0]}</th>
               <td>{value?.toString().replace(/\.[0-9]+/, " ")}</td>
             </tr>
           );
         })}
         <tr>
-          <th> Semester</th> <td> {toTitleCase(semester)}</td>
+          <th>Semester</th> <td> {toTitleCase(semester)}</td>
         </tr>
       </tbody>
     </table>
@@ -52,7 +53,7 @@ const Header = ({ lastfetch, semester, setShowSideBar }) => (
   <header style={{ justifyContent: "space-between" }}>
     <section style={{ display: "flex" }}>
       <img src={logo} alt="logo" height="100" />
-      <FetchInfo semester={semester} lastfetch={lastfetch} />
+      {lastfetch&&  <FetchInfo semester={semester} lastfetch={lastfetch} />}
     </section>
     <TransitionButton
       type="draw"

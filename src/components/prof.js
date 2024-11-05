@@ -42,10 +42,9 @@ const Prof = (props) => {
 
     props.addCourse(props.obj);
   };
-  const FirstName = inst.split(" ")[0];
-  let RMP_URL = `https://www.ratemyprofessors.com/search/professors/4018?q=${FirstName}`;
+  let RMP_URL = `https://www.ratemyprofessors.com/search/professors/4018?q=${inst}`;
 
-  if (URL !== "") {
+  if (URL) {
     RMP_URL = URL;
   }
 
@@ -54,7 +53,7 @@ const Prof = (props) => {
       <div style={{ flexBasis: 0 }}>
         {!rating? <ul>
           <li><h1 style={{ color: "blue", width: "120px" }}>No Match found</h1>
-          
+          <a href={RMP_URL}>Rate My Prof</a>
           </li></ul>:
           seats === "Cancel" ? (
           <ul>
