@@ -13,7 +13,7 @@ const Search = (props) => {
   const [list, SetList] = useState([]);
   useEffect(() => {
     props.fetchData();
-  }, []);
+  }, [props]);
 
   const handleBlur = (event) => {
     SetList([]);
